@@ -107,9 +107,9 @@ header {
   justify-content: space-between;
   align-items: flex-end;
   overflow: hidden;
-  padding: 1.5rem 0.5rem 0.5rem;
+  padding: 1rem 0.9rem 0;
   background-color: var(--dark-mode-bg);
-  border-radius: 1.5rem 1.5rem 0 0;
+  border-radius: 1rem 1rem 0 0;
 }
 
 /* Nav icons */
@@ -150,7 +150,7 @@ header {
 
 /* HOME PAGE STYLES */
 .home-page {
-  margin: 3.5rem 0 0 0;
+  margin: 4rem 0 0 0;
   padding-bottom: 9rem;
 }
 
