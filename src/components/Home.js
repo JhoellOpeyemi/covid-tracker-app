@@ -9,9 +9,7 @@ const Home = ({ data }) => {
         <div className="location-time-chart">
           <div className="location-time-frame">
             {typeof data[0] != "undefined" ? (
-              <p className="location">
-                {data[0].country ? data[0].country : "World"}
-              </p>
+              <p className="location">{data[0].Country}</p>
             ) : (
               ""
             )}

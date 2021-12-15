@@ -33,6 +33,7 @@
 
 /* Helper classes style */
 .container {
+  position: relative;
   width: 90%;
   margin: auto;
 }
@@ -107,9 +108,8 @@ header {
   justify-content: space-between;
   align-items: flex-end;
   overflow: hidden;
-  padding: 1rem 0.9rem 0;
+  padding: 0.8rem 0.75rem 0;
   background-color: var(--dark-mode-bg);
-  border-radius: 1rem 1rem 0 0;
 }
 
 /* Nav icons */
@@ -151,7 +151,7 @@ header {
 /* HOME PAGE STYLES */
 .home-page {
   margin: 4rem 0 0 0;
-  padding-bottom: 9rem;
+  padding-bottom: 8.3rem;
 }
 
 .main {
@@ -226,7 +226,8 @@ header {
 .search-page {
   position: absolute;
   top: 7rem;
-  width: 90%;
+  width: 100%;
+  height: 100vh;
 }
 
 .input-group {

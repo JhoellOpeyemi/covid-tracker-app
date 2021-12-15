@@ -1,6 +1,8 @@
 import React from "react";
 
-const SearchResultButton = ({ country_name, getData, api, data }) => {
+const SearchResultButton = ({ country, getData, api, data, isoCode }) => {
+  let iso;
+
   const getSearchResults = () => {
     const homePage = document.querySelector(".home-page");
     const searchPage = document.querySelector(".search-page");
@@ -8,7 +10,13 @@ const SearchResultButton = ({ country_name, getData, api, data }) => {
     const searchIcon = document.querySelector(".search-icon");
     const location = document.querySelector(".location");
 
-    getData(`${api.base}${api.countryData}${country_name}`);
+    isoCode.forEach((code) => {
+      if (code.Country === country) {
+        iso = code.ThreeLetterSymbol;
+      }
+    });
+
+    getData(`${api.base}${api.countryData}${country}/${iso}`);
 
     if (typeof data[0] != "undefined") {
       searchPage.classList.remove("active");
@@ -18,9 +26,10 @@ const SearchResultButton = ({ country_name, getData, api, data }) => {
     }
     location.textContent = "";
   };
+
   return (
     <button className="result-btn" onClick={getSearchResults}>
-      <span className="country-name">{country_name}</span>
+      <span className="country-name">{country}</span>
       <span className="right-icon">
         <svg
           width="30"

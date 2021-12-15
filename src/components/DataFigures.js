@@ -10,7 +10,7 @@ const DataFigures = ({ data }) => {
       <div className="data-pair">
         <h3 className="data-heading">Total Number of Recorded Cases</h3>
         {typeof data[0] != "undefined" ? (
-          <p className="data-figure">{numberWithCommas(data[0].confirmed)}</p>
+          <p className="data-figure">{numberWithCommas(data[0].TotalCases)}</p>
         ) : (
           "--"
         )}
@@ -19,16 +19,18 @@ const DataFigures = ({ data }) => {
       <div className="data-pair">
         <h3 className="data-heading">Total Number of Recoveries</h3>
         {typeof data[0] != "undefined" ? (
-          <p className="data-figure">{numberWithCommas(data[0].recovered)}</p>
+          <p className="data-figure">
+            {numberWithCommas(data[0].TotalRecovered)}
+          </p>
         ) : (
           "--"
         )}
       </div>
 
       <div className="data-pair">
-        <h3 className="data-heading">Total Number of Critical Cases</h3>
+        <h3 className="data-heading">Total Number of Active Cases</h3>
         {typeof data[0] != "undefined" ? (
-          <p className="data-figure">{numberWithCommas(data[0].critical)}</p>
+          <p className="data-figure">{numberWithCommas(data[0].ActiveCases)}</p>
         ) : (
           "--"
         )}{" "}
@@ -37,7 +39,7 @@ const DataFigures = ({ data }) => {
       <div className="data-pair">
         <h3 className="data-heading">Total Number of Deaths</h3>
         {typeof data[0] != "undefined" ? (
-          <p className="data-figure">{numberWithCommas(data[0].deaths)}</p>
+          <p className="data-figure">{numberWithCommas(data[0].TotalDeaths)}</p>
         ) : (
           "--"
         )}{" "}
