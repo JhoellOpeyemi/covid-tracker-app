@@ -1,0 +1,65 @@
+.home-page {
+  position: absolute;
+  width: 90%;
+  margin: 4rem 0 0 0;
+  padding-bottom: 7rem;
+}
+
+.location-time-frame {
+  text-align: center;
+}
+
+.location {
+  font-size: 1.5625rem;
+  color: var(--white);
+}
+
+.time-frame {
+  margin: 0.6rem 0 1.3rem 0;
+  background: none;
+  border: none;
+  color: var(--white-65);
+  font-size: 0.9375rem;
+  text-align: center;
+  padding: 0.14rem;
+}
+
+.time-frame option {
+  background-color: var(--toggle-bg);
+}
+
+.chart {
+  width: 100%;
+}
+
+.data-figures-wrapper {
+  background-color: var(--card-bg-dark);
+  border-radius: 1rem;
+  margin: 1.25rem 0 0 0;
+  padding: 0 0.8125rem;
+}
+
+.data-pair {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.data-pair:not(:last-child) {
+  border-bottom: 1px solid var(--white-10);
+}
+
+.data-heading {
+  font-weight: 400;
+  font-size: 0.9rem;
+  padding-right: 1.4rem;
+  line-height: 1.7;
+}
+
+.data-figure {
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.125rem;
+  letter-spacing: 1px;
+}

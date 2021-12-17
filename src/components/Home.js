@@ -1,6 +1,7 @@
 import React from "react";
 import DataChart from "./DataChart";
 import DataFigures from "./DataFigures";
+import "../styles/home.css";
 
 const Home = ({ data }) => {
   return (

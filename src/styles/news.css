@@ -1,0 +1,29 @@
+.news-page {
+  position: relative;
+  top: 4rem;
+  padding-bottom: 7rem;
+}
+
+.news-group {
+  list-style: none;
+  padding: 0 0.1rem;
+}
+
+.news-list {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: var(--card-bg-dark);
+  padding: 0.5rem;
+  gap: 1rem;
+}
+
+.news-list:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.news-image {
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
+}
