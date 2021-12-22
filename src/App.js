@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Search from "./components/Search";
@@ -8,6 +8,7 @@ import Nav from "./components/Nav";
 
 function App() {
   const [data, setData] = useState({});
+  const [newsList, setNewsList] = useState([]);
 
   const api = {
     base: "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/",
@@ -19,6 +20,7 @@ function App() {
 
   useEffect(() => {
     getData(`${api.base}${api.worldData}`);
+    getNews(`${api.base}${api.news}`);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -40,6 +42,25 @@ function App() {
       });
   };
 
+  const getNews = (api) => {
+    fetch(api, {
+      method: "GET",
+      headers: {
+        "x-rapidapi-host":
+          "vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com",
+        "x-rapidapi-key": "652c66e0famsh0aadcac5e5a938fp196d32jsn0fe9e2225e0f",
+      },
+    })
+      .then((res) => res.json())
+      .then((news) => {
+        // console.log(news.news);
+        setNewsList(news.news);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
   return (
     <Router>
       <div className="container">
@@ -48,11 +69,11 @@ function App() {
           <Route path="/" element={<Home data={data} />} />
 
           <Route
-            path="/search"
+            path="search"
             element={<Search getData={getData} api={api} data={data} />}
           />
 
-          <Route path="/news" element={<News api={api} />} />
+          <Route path="news" element={<News newsList={newsList} />} />
         </Routes>
         <Nav />
       </div>
