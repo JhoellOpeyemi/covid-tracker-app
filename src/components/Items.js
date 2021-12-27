@@ -27,6 +27,8 @@ const Items = ({ news }) => {
       return `${hoursAgo} hours ${minutesAgo} minutes ago`;
     } else if (hoursAgo === 1) {
       return `${hoursAgo} hour ${minutesAgo} minutes ago`;
+    } else {
+      return `${minutesAgo} minutes ago`;
     }
   };
 

@@ -8,6 +8,7 @@ import Nav from "./components/Nav";
 
 function App() {
   const [data, setData] = useState({});
+  const [isoCode, setIsoCode] = useState([]);
   const [newsList, setNewsList] = useState([]);
 
   const api = {
@@ -15,11 +16,12 @@ function App() {
     worldData: "npm-covid-data/world",
     isoList: "npm-covid-data/countries-name-ordered",
     countryData: "npm-covid-data/country-report-iso-based/",
-    news: "news/get-coronavirus-news/0",
+    news: "news/get-coronavirus-news/1",
   };
 
   useEffect(() => {
     getData(`${api.base}${api.worldData}`);
+    getIsoCodeList(`${api.base}${api.isoList}`);
     getNews(`${api.base}${api.news}`);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -61,6 +63,24 @@ function App() {
       });
   };
 
+  const getIsoCodeList = (par) => {
+    fetch(par, {
+      method: "GET",
+      headers: {
+        "x-rapidapi-host":
+          "vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com",
+        "x-rapidapi-key": "652c66e0famsh0aadcac5e5a938fp196d32jsn0fe9e2225e0f",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setIsoCode(data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
   return (
     <Router>
       <div className="container">
@@ -70,7 +90,14 @@ function App() {
 
           <Route
             path="search"
-            element={<Search getData={getData} api={api} data={data} />}
+            element={
+              <Search
+                getData={getData}
+                api={api}
+                data={data}
+                isoCode={isoCode}
+              />
+            }
           />
 
           <Route path="news" element={<News newsList={newsList} />} />

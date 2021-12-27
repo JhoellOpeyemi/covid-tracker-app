@@ -59,3 +59,9 @@
   background-color: var(--card-bg-dark);
   margin: 0 0 1.25rem 0;
 }
+
+.country-name {
+  display: inline-block;
+  text-align: left;
+  line-height: 1.4;
+}
