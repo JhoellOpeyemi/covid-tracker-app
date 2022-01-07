@@ -5,31 +5,26 @@
   padding-bottom: 7rem;
 }
 
-.location-time-frame {
-  text-align: center;
-}
-
 .location {
   font-size: 1.5625rem;
-  color: var(--white);
-}
-
-.time-frame {
-  margin: 0.6rem 0 1.3rem 0;
-  background: none;
-  border: none;
-  color: var(--white-65);
-  font-size: 0.9375rem;
   text-align: center;
-  padding: 0.14rem;
-}
-
-.time-frame option {
-  background-color: var(--toggle-bg);
+  color: var(--white);
+  margin: 0 0 1.3rem 0;
 }
 
 .chart {
   width: 100%;
+}
+
+.chart-group {
+  margin: 1rem 0 1.1rem;
+  padding: 1.5rem 0;
+}
+
+.chart-desc {
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0 0.5rem;
+  line-height: 1.5;
 }
 
 .data-figures-wrapper {

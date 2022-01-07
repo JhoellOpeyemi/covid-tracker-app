@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import SearchResultButton from "./SearchResultButton";
 import "../styles/search.css";
 
-const Search = ({ getData, api, data, isoCode }) => {
+const Search = ({ getData, api, data, isoCode, getDataForChart }) => {
   const [query, setQuery] = useState("");
 
   let allCountriesList = [];
   let filter;
-  let lowerCaseFilter;
+
   const popularCountries = [
     "USA",
     "France",
@@ -20,10 +20,6 @@ const Search = ({ getData, api, data, isoCode }) => {
   isoCode.forEach((code) => {
     allCountriesList.push(code.Country);
   });
-
-  //   const filterSearch = () => {
-
-  //   };
 
   for (let i = 0; i < allCountriesList.length; i++) {
     if (query) {
@@ -64,6 +60,7 @@ const Search = ({ getData, api, data, isoCode }) => {
                     api={api}
                     data={data}
                     isoCode={isoCode}
+                    getDataForChart={getDataForChart}
                   />
                 );
               })}
@@ -80,6 +77,7 @@ const Search = ({ getData, api, data, isoCode }) => {
                     api={api}
                     data={data}
                     isoCode={isoCode}
+                    getDataForChart={getDataForChart}
                   />
                 );
               })}

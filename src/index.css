@@ -19,7 +19,10 @@
   /* Light mode colours */
   --black: #000;
   --black-70: rgba(0, 0, 0, 0.7);
+  --black-90: rgba(0, 0, 0, 0.9);
   --black-65: rgba(0, 0, 0, 0.65);
+  --black-10: rgba(0, 0, 0, 0.1);
+  --black-5: rgba(0, 0, 0, 0.05);
   --card-bg-light: rgba(0, 0, 0, 0.05);
   --search-input-light: rgba(0, 0, 0, 0.13);
 }
@@ -93,9 +96,18 @@ header {
   width: 0.75rem;
   height: 0.75rem;
   border-radius: 50%;
-  background-color: var(--accent-colour);
   transition: all var(--transition-time) ease-in-out;
   pointer-events: none;
+}
+
+.toggle-indicator.dark-mode-active {
+  background-color: var(--accent-colour);
+}
+
+.toggle-indicator.light-mode-active {
+  left: -45%;
+  background-color: var(--white);
+  opacity: 0;
 }
 
 .toggle-indicator.active {
@@ -123,6 +135,9 @@ header {
   font-family: "Lato", sans-serif;
   font-size: 0.85rem;
   transform: translateY(24%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .nav-icon.active {

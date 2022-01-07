@@ -1,0 +1,82 @@
+body.light {
+  background-color: var(--white);
+  color: var(--black-70);
+}
+
+body.light .location {
+  color: var(--black);
+}
+
+body.light .nav {
+  background-color: var(--white);
+}
+
+body.light .chart-desc {
+  color: var(--black-65);
+}
+
+body.light .data-figures-wrapper {
+  background-color: var(--black-5);
+}
+
+body.light .data-pair:not(:last-child) {
+  border-bottom: 1px solid var(--black-10);
+}
+
+body.light .data-figure {
+  color: var(--black);
+}
+
+body.light .nav-icon {
+  color: var(--black);
+}
+
+body.light .nav-icon .nav-icon-svg path {
+  fill: var(--black);
+}
+
+body.light .nav-icon.active .nav-icon-svg path {
+  fill: var(--accent-colour);
+}
+
+body.light .nav-icon.active {
+  color: var(--accent-colour);
+}
+
+body.light .search-input {
+  background-color: var(--search-input-light);
+  color: var(--black-70);
+}
+
+body.light .input-stick {
+  background-color: var(--black-10);
+}
+
+body.light .search-input::placeholder {
+  color: var(--black-70);
+}
+
+body.light .result-btn {
+  color: var(--black-90);
+  background-color: var(--card-bg-light);
+}
+
+body.light .right-icon svg path {
+  fill: var(--black-90);
+}
+
+body.light .news-header {
+  color: #222;
+}
+
+body.light .news-list {
+  background-color: var(--card-bg-light);
+}
+
+body.light .news-title {
+  color: #333;
+}
+
+body.light .news-time {
+  color: rgba(0, 0, 0, 0.6);
+}

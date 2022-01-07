@@ -1,13 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const SearchResultButton = ({ country, getData, api, data, isoCode }) => {
+const SearchResultButton = ({
+  country,
+  getData,
+  api,
+  data,
+  isoCode,
+  getDataForChart,
+}) => {
   let iso;
 
   const getSearchResults = () => {
-    const homeIcon = document.querySelector(".home-icon");
-    const searchIcon = document.querySelector(".search-icon");
-
     isoCode.forEach((code) => {
       if (code.Country === country) {
         iso = code.ThreeLetterSymbol;
@@ -15,11 +19,7 @@ const SearchResultButton = ({ country, getData, api, data, isoCode }) => {
     });
 
     getData(`${api.base}${api.countryData}${country}/${iso}`);
-
-    if (typeof data[0] != "undefined") {
-      searchIcon.classList.remove("active");
-      homeIcon.classList.add("active");
-    }
+    getDataForChart(`${api.base}${api.sixMonths}${iso}`);
   };
 
   return (

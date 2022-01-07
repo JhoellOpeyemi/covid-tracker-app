@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import NewsDetails from "./NewsDetails";
 
 const Items = ({ news }) => {
   // Get Date elements and set to a variable
@@ -9,7 +7,10 @@ const Items = ({ news }) => {
   let year = new Date().getFullYear();
   let hour = new Date().getHours();
   let minute = new Date().getMinutes();
-  const currentDateFormat = `${year}-${month}-${day}T${hour}:${minute}`;
+  let seconds = new Date().getSeconds();
+
+  const currentDateFormat = `${year}-0${month}-0${day}T${hour}:${minute}:${seconds}`;
+
   const currentMilliSeconds = Number(Date.parse(currentDateFormat));
 
   // Get Api Date and Time and set to a variable
@@ -20,6 +21,7 @@ const Items = ({ news }) => {
   // Function to calculate the time the news was published
   const setPublishedTime = () => {
     const difference = currentMilliSeconds - apiMilliSeconds;
+    // console.log(apiMilliSeconds);
     const hoursAgo = Math.floor((difference / (1000 * 60 * 60)) % 24);
     const minutesAgo = Math.floor((difference / (1000 * 60)) % 60);
 
@@ -36,13 +38,13 @@ const Items = ({ news }) => {
 
   return (
     <li className="news-list">
-      <Link to={`${news.link}`}>
+      <a href={`${news.link}`} target={"_blank"} rel="noreferrer">
         <img src={news.urlToImage} alt="News Headline" className="news-image" />
         <div className="news-title-date">
           <h4 className="news-title">{news.title}</h4>
           <p className="news-time">{setPublishedTime()}</p>
         </div>
-      </Link>
+      </a>
     </li>
   );
 };
