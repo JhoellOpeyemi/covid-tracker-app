@@ -2,6 +2,7 @@
   position: relative;
   top: 4rem;
   padding-bottom: 9rem;
+  min-height: 80vh;
 }
 
 .news-group {

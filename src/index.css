@@ -5,7 +5,7 @@
 
   --toggle-bg: #03070c;
   --font-size: 1rem;
-  --transition-time: 400s;
+  --transition-time: 350ms;
 
   /* Dark mode colours */
   --dark-mode-bg: #14171a;
@@ -40,22 +40,22 @@ a {
 
 /* Helper classes style */
 .container {
-  width: 90%;
-  margin: auto;
+  width: 100%;
+  background-color: var(--dark-mode-bg);
+  padding: 0 1.2rem;
+  color: var(--white-65);
+  transition: all var(--transition-time) ease-in-out;
 }
 
 body {
-  background-color: var(--dark-mode-bg);
   font-family: "Lato", sans-serif;
-  /* min-height: 100vh; */
-  color: var(--white-65);
   font-size: var(--font-size);
 }
 
 /* HEADER AND NAV STYLES */
 /* header */
 header {
-  margin: 1.6875rem 0 0 0;
+  padding: 1.6875rem 0 0 0;
 }
 
 .header-container {
@@ -82,49 +82,52 @@ header {
   position: relative;
   width: 2.3125rem;
   height: 1.125rem;
-  background-color: var(--toggle-bg);
+  background-color: var(--accent-colour);
   border: none;
   border-radius: 0.625rem;
   cursor: pointer;
+  transition: all var(--transition-time) ease-in-out;
 }
 
 /* Circle inside the toggle */
 .toggle-indicator {
   position: absolute;
-  top: 50%;
-  transform: translate(175%, -50%);
+  top: 18%;
   width: 0.75rem;
   height: 0.75rem;
   border-radius: 50%;
   transition: all var(--transition-time) ease-in-out;
-  pointer-events: none;
-}
-
-.toggle-indicator.dark-mode-active {
-  background-color: var(--accent-colour);
-}
-
-.toggle-indicator.light-mode-active {
-  left: -45%;
   background-color: var(--white);
-  opacity: 0;
+  pointer-events: none;
+  transform: translateX(175%);
 }
 
 .toggle-indicator.active {
   transform: translate(0%, 50%);
 }
 
+.toggle.active {
+  background-color: var(--toggle-bg);
+}
+
+.toggle.active .toggle-indicator {
+  background-color: var(--accent-colour);
+  left: -45%;
+}
+
 /* Navigation at the bottom of the screen */
 .nav {
   position: fixed;
   bottom: 0;
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   overflow: hidden;
-  padding: 0.8rem 0.75rem 0;
+  padding: 0.8rem 1.2rem 0;
   background-color: var(--dark-mode-bg);
+  transform: translateX(-1.2rem);
+  transition: all var(--transition-time) ease-in-out;
 }
 
 /* Nav icons */
@@ -138,6 +141,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all var(--transition-time) ease-in-out;
 }
 
 .nav-icon.active {

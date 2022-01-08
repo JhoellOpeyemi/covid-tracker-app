@@ -1,82 +1,82 @@
-body.light {
+.container.light {
   background-color: var(--white);
   color: var(--black-70);
 }
 
-body.light .location {
+.container.light .location {
   color: var(--black);
 }
 
-body.light .nav {
+.container.light .nav {
   background-color: var(--white);
 }
 
-body.light .chart-desc {
+.container.light .chart-desc {
   color: var(--black-65);
 }
 
-body.light .data-figures-wrapper {
+.container.light .data-figures-wrapper {
   background-color: var(--black-5);
 }
 
-body.light .data-pair:not(:last-child) {
+.container.light .data-pair:not(:last-child) {
   border-bottom: 1px solid var(--black-10);
 }
 
-body.light .data-figure {
+.container.light .data-figure {
   color: var(--black);
 }
 
-body.light .nav-icon {
+.container.light .nav-icon {
   color: var(--black);
 }
 
-body.light .nav-icon .nav-icon-svg path {
+.container.light .nav-icon .nav-icon-svg path {
   fill: var(--black);
 }
 
-body.light .nav-icon.active .nav-icon-svg path {
+.container.light .nav-icon.active .nav-icon-svg path {
   fill: var(--accent-colour);
 }
 
-body.light .nav-icon.active {
+.container.light .nav-icon.active {
   color: var(--accent-colour);
 }
 
-body.light .search-input {
+.container.light .search-input {
   background-color: var(--search-input-light);
   color: var(--black-70);
 }
 
-body.light .input-stick {
+.container.light .input-stick {
   background-color: var(--black-10);
 }
 
-body.light .search-input::placeholder {
+.container.light .search-input::placeholder {
   color: var(--black-70);
 }
 
-body.light .result-btn {
+.container.light .result-btn {
   color: var(--black-90);
   background-color: var(--card-bg-light);
 }
 
-body.light .right-icon svg path {
+.container.light .right-icon svg path {
   fill: var(--black-90);
 }
 
-body.light .news-header {
+.container.light .news-header {
   color: #222;
 }
 
-body.light .news-list {
+.container.light .news-list {
   background-color: var(--card-bg-light);
 }
 
-body.light .news-title {
+.container.light .news-title {
   color: #333;
 }
 
-body.light .news-time {
+.container.light .news-time {
   color: rgba(0, 0, 0, 0.6);
 }

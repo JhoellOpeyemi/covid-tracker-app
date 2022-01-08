@@ -13,7 +13,7 @@ function App() {
   const [isoCode, setIsoCode] = useState([]);
   const [newsList, setNewsList] = useState([]);
   const [chartData, setChartData] = useState([]);
-  const [lightMode, setLightMode] = useState(1);
+  const [lightMode, setLightMode] = useState(false);
 
   const api = {
     base: "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/",
@@ -113,26 +113,14 @@ function App() {
     }
   });
 
-  const body = document.querySelector("body");
-  const darkModeIndicator = document.querySelector(".dark-mode-active");
-  const lightModeIndicator = document.querySelector(".light-mode-active");
-
   const toggleTheme = () => {
-    // setLight(!light);
-    setLightMode(lightMode + 1);
-
-    if (lightMode % 2 === 1) {
-      body.classList.add("light");
-      darkModeIndicator.style.opacity = 0;
-    } else {
-      body.classList.remove("light");
-    }
+    setLightMode(!lightMode);
   };
 
   return (
     <Router>
-      <div className="container">
-        <Header toggleTheme={toggleTheme} />
+      <div className={lightMode ? "container light" : "container"}>
+        <Header toggleTheme={toggleTheme} lightMode={lightMode} />
         <Routes>
           <Route
             path="/"

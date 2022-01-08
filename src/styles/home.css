@@ -1,6 +1,6 @@
 .home-page {
-  position: absolute;
-  width: 90%;
+  position: relative;
+  width: 100%;
   margin: 4rem 0 0 0;
   padding-bottom: 7rem;
 }
@@ -10,6 +10,7 @@
   text-align: center;
   color: var(--white);
   margin: 0 0 1.3rem 0;
+  transition: all var(--transition-time) ease-in-out;
 }
 
 .chart {
@@ -29,6 +30,7 @@
 
 .data-figures-wrapper {
   background-color: var(--card-bg-dark);
+  transition: all var(--transition-time) ease-in-out;
   border-radius: 1rem;
   margin: 1.25rem 0 0 0;
   padding: 0 0.8125rem;
@@ -54,6 +56,7 @@
 
 .data-figure {
   color: var(--white);
+  /* transition: all var(--transition-time) ease-in-out; */
   font-weight: bold;
   font-size: 1.125rem;
   letter-spacing: 1px;
