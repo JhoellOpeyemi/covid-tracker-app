@@ -1,17 +1,7 @@
 import React from "react";
 
 const Items = ({ news }) => {
-  // Get Date elements and set to a variable
-  let day = new Date().getDate();
-  let month = new Date().getMonth() + 1;
-  let year = new Date().getFullYear();
-  let hour = new Date().getHours();
-  let minute = new Date().getMinutes();
-  let seconds = new Date().getSeconds();
-
-  const currentDateFormat = `${year}-0${month}-0${day}T${hour}:${minute}:${seconds}`;
-
-  const currentMilliSeconds = Number(Date.parse(currentDateFormat));
+  const currentMilliSeconds = new Date().valueOf();
 
   // Get Api Date and Time and set to a variable
   const splitDateAndTime = news.pubDate.split(".");
@@ -20,10 +10,10 @@ const Items = ({ news }) => {
 
   // Function to calculate the time the news was published
   const setPublishedTime = () => {
-    const difference = currentMilliSeconds - apiMilliSeconds;
-    // console.log(apiMilliSeconds);
+    const difference = Number(currentMilliSeconds - apiMilliSeconds);
     const hoursAgo = Math.floor((difference / (1000 * 60 * 60)) % 24);
     const minutesAgo = Math.floor((difference / (1000 * 60)) % 60);
+    console.log(difference);
 
     if (hoursAgo > 1) {
       return `${hoursAgo} hours ${minutesAgo} minutes ago`;

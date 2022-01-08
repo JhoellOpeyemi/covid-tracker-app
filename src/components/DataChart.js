@@ -46,15 +46,44 @@ const DataChart = ({ chartData }) => {
       "",
       "",
       "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
     ],
     datasets: [
       {
-        label: "# of Votes",
+        label: "# of New Cases",
         data: reversedData.map((data) => data.new_cases),
-        backgroundColor: ["rgba(255, 255, 255, 0.1)"],
-        borderColor: ["lightgreen"],
+        borderColor: ["#05CE91"],
         borderWidth: 1,
-        pointRadius: 0,
+        pointRadius: 1,
       },
     ],
   };
@@ -63,7 +92,7 @@ const DataChart = ({ chartData }) => {
     <div className="chart-group">
       <Line data={data} />
       <p className="chart-desc">
-        This chart shows the data of new cases recorded for the past 1 month
+        This chart shows the data of new cases recorded for the past 2 months
       </p>
     </div>
   );

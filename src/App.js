@@ -108,7 +108,7 @@ function App() {
 
   let lastOneMonth = [];
   chartData.forEach((data, index) => {
-    if (index <= 30) {
+    if (index <= 60) {
       lastOneMonth.push(data);
     }
   });
