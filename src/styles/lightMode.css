@@ -27,6 +27,11 @@
   color: var(--black);
 }
 
+.container.light .data-heading {
+  color: var(--black-70);
+  transition: all var(--transition-time) ease-in-out;
+}
+
 .container.light .nav-icon {
   color: var(--black);
 }

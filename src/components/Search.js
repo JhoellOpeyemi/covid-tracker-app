@@ -6,7 +6,6 @@ import "../styles/search.css";
 const Search = ({
   getCountryData,
   api,
-  userCountry,
   isoCode,
   getDataForChart,
   setQuery,
@@ -16,20 +15,20 @@ const Search = ({
   let filter;
 
   const popularCountries = [
-    userCountry,
     "USA",
     "France",
     "Nigeria",
     "China",
     "Germany",
     "Italy",
+    "Singapore",
   ];
 
-  const popularCountriesWithUserCountry = [...new Set(popularCountries)];
-
-  isoCode?.forEach((code) => {
-    allCountriesList.push(code.Country);
-  });
+  if (isoCode.length >= 1) {
+    isoCode.forEach((code) => {
+      allCountriesList.push(code.Country);
+    });
+  }
 
   for (let i = 0; i < allCountriesList.length; i++) {
     if (query) {
@@ -68,7 +67,7 @@ const Search = ({
           ) : (
             <>
               <h3 className="country-result-heading">Some popular countries</h3>
-              {popularCountriesWithUserCountry.map((country, index) => {
+              {popularCountries.map((country, index) => {
                 return (
                   <SearchResultButton
                     key={index}

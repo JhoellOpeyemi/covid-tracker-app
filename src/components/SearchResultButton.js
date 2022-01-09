@@ -12,11 +12,14 @@ const SearchResultButton = ({
   let iso;
 
   const getSearchResults = () => {
-    isoCode?.forEach((code) => {
-      if (code.Country === country) {
-        iso = code.ThreeLetterSymbol;
-      }
-    });
+    if (isoCode.length >= 1) {
+      isoCode.forEach((code) => {
+        if (code.Country === country) {
+          iso = code.ThreeLetterSymbol;
+        }
+      });
+    }
+
     setQuery("");
 
     getCountryData(`${api.base}${api.countryData}${country}/${iso}`);

@@ -18,9 +18,11 @@ const SearchResultData = ({
   let allCountriesList = [];
   let filter;
 
-  isoCode?.forEach((code) => {
-    allCountriesList.push(code.Country);
-  });
+  if (isoCode.length >= 1) {
+    isoCode.forEach((code) => {
+      allCountriesList.push(code.Country);
+    });
+  }
 
   for (let i = 0; i < allCountriesList.length; i++) {
     if (query) {

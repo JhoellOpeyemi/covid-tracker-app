@@ -17,7 +17,6 @@ function App() {
   const [chartData, setChartData] = useState([]);
   const [lightMode, setLightMode] = useState(false);
   const [query, setQuery] = useState("");
-  const [userCountry, setUserCountry] = useState("");
 
   const api = {
     base: "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/",
@@ -33,7 +32,6 @@ function App() {
     getIsoCodeList(`${api.base}${api.isoList}`);
     getNews(`${api.base}${api.news}`);
     getDataForChart(`${api.base}${api.sixMonths}`);
-    getUserCountry();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -128,42 +126,17 @@ function App() {
       });
   };
 
-  let lastOneMonth = [];
-  chartData?.forEach((data, index) => {
-    if (index <= 60) {
-      lastOneMonth.push(data);
-    }
-  });
+  let lastTwoMonths = [];
+  if (chartData.length >= 1) {
+    chartData.forEach((data, index) => {
+      if (index <= 60) {
+        lastTwoMonths.push(data);
+      }
+    });
+  }
 
   const toggleTheme = () => {
     setLightMode(!lightMode);
-  };
-
-  const getUserCountry = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        console.log(position);
-        fetch(
-          `https://trueway-geocoding.p.rapidapi.com/ReverseGeocode?location=${position.coords.latitude}%2C${position.coords.longitude}&language=en`,
-          {
-            method: "GET",
-            headers: {
-              "x-rapidapi-host": "trueway-geocoding.p.rapidapi.com",
-              "x-rapidapi-key":
-                "652c66e0famsh0aadcac5e5a938fp196d32jsn0fe9e2225e0f",
-            },
-          }
-        )
-          .then((res) => res.json())
-          .then((data) => {
-            let splitData = data.results[0].address.split(", ").at(-1);
-            setUserCountry(splitData);
-          })
-          .catch((err) => {
-            console.error(err);
-          });
-      });
-    }
   };
 
   return (
@@ -179,7 +152,6 @@ function App() {
               <Search
                 getCountryData={getCountryData}
                 api={api}
-                userCountry={userCountry}
                 isoCode={isoCode}
                 getDataForChart={getDataForChart}
                 setQuery={setQuery}
@@ -192,7 +164,7 @@ function App() {
             path="search/:country"
             element={
               <SearchResultData
-                chartData={lastOneMonth}
+                chartData={lastTwoMonths}
                 getDataForChart={getDataForChart}
                 getCountryData={getCountryData}
                 countryData={countryData}

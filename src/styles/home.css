@@ -57,6 +57,8 @@
   font-size: 0.9rem;
   padding-right: 1.4rem;
   line-height: 1.7;
+  color: var(--white-65);
+  transition: all var(--transition-time) ease-in-out;
 }
 
 .data-figure {
