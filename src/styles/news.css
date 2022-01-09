@@ -1,3 +1,4 @@
+/* Styles for the news page */
 .news-page {
   position: relative;
   top: 4rem;
@@ -28,6 +29,10 @@
   gap: 1.5rem;
 }
 
+.news-list:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+
 .news-image {
   width: 100%;
 }
@@ -48,8 +53,4 @@
   padding-top: 1rem;
   color: rgba(255, 255, 255, 0.4);
   transition: all var(--transition-time) ease-in-out;
-}
-
-.news-list:not(:last-child) {
-  margin-bottom: 2.5rem;
 }

@@ -1,3 +1,4 @@
+/* Styles for the search page */
 .search-page,
 .search-result {
   position: relative;
@@ -81,6 +82,18 @@
   color: var(--white);
   margin: 4.5rem 0 0.7rem 0;
   transition: all var(--transition-time) ease-in-out;
+}
+
+.chart-group {
+  width: 90%;
+  margin: auto;
+  padding: 1.5rem 0;
+}
+
+.chart-desc {
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0 0.5rem;
+  line-height: 1.5;
 }
 
 .fa-arrow-left {

@@ -1,3 +1,4 @@
+/* Header and nav styles */
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
 
 :root {
@@ -38,18 +39,30 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 /* Helper classes style */
 .container {
   width: 100%;
   background-color: var(--dark-mode-bg);
-  padding: 0 1.2rem;
+  padding: 0.5rem 1.2rem;
   color: var(--white-65);
   transition: all var(--transition-time) ease-in-out;
+  min-height: 100vh;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 64rem;
+  margin: auto;
 }
 
 body {
   font-family: "Lato", sans-serif;
   font-size: var(--font-size);
+  height: 100vh;
 }
 
 /* HEADER AND NAV STYLES */
@@ -120,6 +133,7 @@ header {
   position: fixed;
   bottom: 0;
   width: 100%;
+  max-width: 61.5rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;

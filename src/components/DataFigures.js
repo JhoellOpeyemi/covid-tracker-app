@@ -1,6 +1,7 @@
 import React from "react";
 
 const DataFigures = ({ data }) => {
+  // function to add commas to number
   const numberWithCommas = (number) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };

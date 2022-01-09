@@ -1,0 +1,115 @@
+/* Styles for screen sizes larger than 608px */
+@media screen and (min-width: 38rem) {
+  /* Home Page */
+  .location {
+    font-size: 2rem;
+  }
+
+  .data-figures-wrapper {
+    margin: 2rem 0 0 0;
+    padding: 2rem;
+  }
+
+  .data-pair {
+    padding: 1.7rem 0;
+  }
+
+  .data-heading {
+    font-size: 1.2rem;
+    padding-right: 5rem;
+  }
+
+  .data-figure {
+    font-size: 1.35rem;
+  }
+
+  /* Nav */
+  .nav {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    padding: 2.3rem 0 0;
+    transform: translateX(-50%);
+    height: 2.4vh;
+  }
+
+  .nav svg {
+    display: none;
+  }
+
+  .nav-icon {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #ddd;
+    transform: translateY(0);
+    display: block;
+  }
+
+  .nav-icon:not(:last-child) {
+    margin-right: 2.6rem;
+  }
+
+  /* Search Page */
+  .search-page,
+  .search-result,
+  .news-page {
+    position: static;
+  }
+
+  .search-page,
+  .news-page {
+    margin: 6rem 0 0;
+  }
+
+  .search-result {
+    margin: 4.5rem 0 0;
+  }
+
+  .search-input {
+    height: 4rem;
+    font-size: 1.3rem;
+  }
+
+  .search-input::placeholder {
+    letter-spacing: 1px;
+  }
+
+  .country-result-heading {
+    font-size: 1.35rem;
+  }
+
+  .result-btn {
+    height: 4.3rem;
+    padding: 0 2rem;
+    font-size: 1.2rem;
+    margin: 0 0 1.5rem;
+  }
+
+  .chart-desc {
+    text-align: center;
+    padding: 0.2rem 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  /* News Page */
+  .news-header {
+    font-size: 1.7rem;
+    margin: 0.2rem 0 3rem;
+  }
+
+  .news-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.3rem 2rem;
+    padding: 0 0.1rem;
+  }
+
+  .news-list:not(:last-child) {
+    margin-bottom: 0;
+  }
+}

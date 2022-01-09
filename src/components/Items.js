@@ -23,8 +23,6 @@ const Items = ({ news }) => {
     }
   };
 
-  setPublishedTime();
-
   return (
     <li className="news-list">
       <a href={`${news.link}`} target={"_blank"} rel="noreferrer">

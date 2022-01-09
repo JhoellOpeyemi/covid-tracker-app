@@ -1,6 +1,10 @@
 import React from "react";
+
+// child components imports
 import SearchInputBox from "./SearchInputBox";
 import SearchResultButton from "./SearchResultButton";
+
+// import styles for search page
 import "../styles/search.css";
 
 const Search = ({
@@ -11,9 +15,12 @@ const Search = ({
   setQuery,
   query,
 }) => {
+  // Array to hold all countries for search in order to filter
   let allCountriesList = [];
+  // filter variable
   let filter;
 
+  // Popular countries array
   const popularCountries = [
     "USA",
     "France",
@@ -24,12 +31,14 @@ const Search = ({
     "Singapore",
   ];
 
+  // Push all countries into allCountriesList array
   if (isoCode.length >= 1) {
     isoCode.forEach((code) => {
       allCountriesList.push(code.Country);
     });
   }
 
+  //   If user has typed in the input box, loop through allCountriesList array and filter the countries that contain the text user typed
   for (let i = 0; i < allCountriesList.length; i++) {
     if (query) {
       filter = allCountriesList.filter((country) =>
@@ -44,7 +53,7 @@ const Search = ({
 
       <div className="country-result">
         <div className="result-button-group">
-          {query ? (
+          {query && typeof filter != "undefined" ? (
             <>
               <h3 className="country-result-heading">
                 Searched results for '{`${query}`}'

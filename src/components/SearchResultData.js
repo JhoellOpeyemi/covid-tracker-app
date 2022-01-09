@@ -4,6 +4,7 @@ import SearchResultButton from "./SearchResultButton";
 import DataFigures from "./DataFigures";
 import DataChart from "./DataChart";
 import { Link } from "react-router-dom";
+import "../styles/search.css";
 
 const SearchResultData = ({
   chartData,
@@ -15,15 +16,19 @@ const SearchResultData = ({
   api,
   getDataForChart,
 }) => {
+  // Array to hold all countries for search in order to filter
   let allCountriesList = [];
+  // filter variable
   let filter;
 
+  // Push all countries into allCountriesList array
   if (isoCode.length >= 1) {
     isoCode.forEach((code) => {
       allCountriesList.push(code.Country);
     });
   }
 
+  //   If user has typed in the input box, loop through allCountriesList array and filter the countries that contain the text user typed
   for (let i = 0; i < allCountriesList.length; i++) {
     if (query) {
       filter = allCountriesList.filter((country) =>
@@ -31,6 +36,7 @@ const SearchResultData = ({
       );
     }
   }
+
   return (
     <section className="search-result">
       <Link to="/search">
@@ -50,9 +56,10 @@ const SearchResultData = ({
           ></path>
         </svg>
       </Link>
+
       <SearchInputBox setQuery={setQuery} query={query} />
       <div className="result-button-group">
-        {query ? (
+        {query && typeof filter != "undefined" ? (
           <>
             <h3 className="country-result-heading">
               Searched results for '{`${query}`}'

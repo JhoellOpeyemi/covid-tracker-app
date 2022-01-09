@@ -11,6 +11,7 @@ const SearchResultButton = ({
 }) => {
   let iso;
 
+  // function to run when a result button is clicked
   const getSearchResults = () => {
     if (isoCode.length >= 1) {
       isoCode.forEach((code) => {
