@@ -3,27 +3,28 @@ import { Link } from "react-router-dom";
 
 const SearchResultButton = ({
   country,
-  getData,
+  getCountryData,
   api,
-  data,
   isoCode,
   getDataForChart,
+  setQuery,
 }) => {
   let iso;
 
   const getSearchResults = () => {
-    isoCode.forEach((code) => {
+    isoCode?.forEach((code) => {
       if (code.Country === country) {
         iso = code.ThreeLetterSymbol;
       }
     });
+    setQuery("");
 
-    getData(`${api.base}${api.countryData}${country}/${iso}`);
+    getCountryData(`${api.base}${api.countryData}${country}/${iso}`);
     getDataForChart(`${api.base}${api.sixMonths}${iso}`);
   };
 
   return (
-    <Link to="/">
+    <Link to={`/search/${country}`}>
       <button className="result-btn" onClick={getSearchResults}>
         <span className="country-name">{country}</span>
         <span className="right-icon">

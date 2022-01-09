@@ -13,7 +13,6 @@ const Items = ({ news }) => {
     const difference = Number(currentMilliSeconds - apiMilliSeconds);
     const hoursAgo = Math.floor((difference / (1000 * 60 * 60)) % 24);
     const minutesAgo = Math.floor((difference / (1000 * 60)) % 60);
-    console.log(difference);
 
     if (hoursAgo > 1) {
       return `${hoursAgo} hours ${minutesAgo} minutes ago`;

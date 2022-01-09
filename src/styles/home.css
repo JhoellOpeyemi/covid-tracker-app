@@ -3,14 +3,19 @@
   width: 100%;
   margin: 4rem 0 0 0;
   padding-bottom: 7rem;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .location {
   font-size: 1.5625rem;
   text-align: center;
   color: var(--white);
-  margin: 0 0 1.3rem 0;
+  margin: 0 0 3rem 0;
   transition: all var(--transition-time) ease-in-out;
+  letter-spacing: 1px;
 }
 
 .chart {
@@ -32,7 +37,7 @@
   background-color: var(--card-bg-dark);
   transition: all var(--transition-time) ease-in-out;
   border-radius: 1rem;
-  margin: 1.25rem 0 0 0;
+  margin: 2rem 0 0 0;
   padding: 0 0.8125rem;
 }
 

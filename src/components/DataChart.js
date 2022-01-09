@@ -13,7 +13,7 @@ ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement);
 
 const DataChart = ({ chartData }) => {
   let reversedData = [].concat(chartData).reverse();
-  console.log(reversedData);
+
   const data = {
     labels: [
       "",

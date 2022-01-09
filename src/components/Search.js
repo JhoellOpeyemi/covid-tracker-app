@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
+import SearchInputBox from "./SearchInputBox";
 import SearchResultButton from "./SearchResultButton";
 import "../styles/search.css";
 
-const Search = ({ getData, api, data, isoCode, getDataForChart }) => {
-  const [query, setQuery] = useState("");
-
+const Search = ({
+  getCountryData,
+  api,
+  userCountry,
+  isoCode,
+  getDataForChart,
+  setQuery,
+  query,
+}) => {
   let allCountriesList = [];
   let filter;
 
   const popularCountries = [
+    userCountry,
     "USA",
     "France",
     "Nigeria",
@@ -17,7 +25,9 @@ const Search = ({ getData, api, data, isoCode, getDataForChart }) => {
     "Italy",
   ];
 
-  isoCode.forEach((code) => {
+  const popularCountriesWithUserCountry = [...new Set(popularCountries)];
+
+  isoCode?.forEach((code) => {
     allCountriesList.push(code.Country);
   });
 
@@ -31,17 +41,7 @@ const Search = ({ getData, api, data, isoCode, getDataForChart }) => {
 
   return (
     <section className="search-page main">
-      <div className="input-group">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Type a country to search"
-          onChange={(e) => setQuery(e.target.value)}
-          value={query}
-          //   onKeyUp={filterSearch}
-        />
-        <div className="input-stick"></div>
-      </div>
+      <SearchInputBox setQuery={setQuery} query={query} />
 
       <div className="country-result">
         <div className="result-button-group">
@@ -51,16 +51,16 @@ const Search = ({ getData, api, data, isoCode, getDataForChart }) => {
                 Searched results for '{`${query}`}'
               </h3>
 
-              {filter.map((result) => {
+              {filter.map((result, index) => {
                 return (
                   <SearchResultButton
-                    key={result}
+                    key={index}
                     country={result}
-                    getData={getData}
+                    getCountryData={getCountryData}
                     api={api}
-                    data={data}
                     isoCode={isoCode}
                     getDataForChart={getDataForChart}
+                    setQuery={setQuery}
                   />
                 );
               })}
@@ -68,16 +68,16 @@ const Search = ({ getData, api, data, isoCode, getDataForChart }) => {
           ) : (
             <>
               <h3 className="country-result-heading">Some popular countries</h3>
-              {popularCountries.map((country) => {
+              {popularCountriesWithUserCountry.map((country, index) => {
                 return (
                   <SearchResultButton
-                    key={country}
+                    key={index}
                     country={country}
-                    getData={getData}
+                    getCountryData={getCountryData}
                     api={api}
-                    data={data}
                     isoCode={isoCode}
                     getDataForChart={getDataForChart}
+                    setQuery={setQuery}
                   />
                 );
               })}

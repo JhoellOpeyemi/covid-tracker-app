@@ -1,22 +1,19 @@
 import React from "react";
-import DataChart from "./DataChart";
 import DataFigures from "./DataFigures";
 import "../styles/home.css";
 
-const Home = ({ data, chartData }) => {
+const Home = ({ data }) => {
   return (
     <main className="home-page main active">
       <div className="main-wrapper">
         <div className="location-chart">
           <>
             {typeof data[0] != "undefined" ? (
-              <p className="location">{data[0].Country}</p>
+              <p className="location">{data[0].Country} Data</p>
             ) : (
               ""
             )}
           </>
-
-          <DataChart chartData={chartData} />
         </div>
 
         <DataFigures data={data} />
