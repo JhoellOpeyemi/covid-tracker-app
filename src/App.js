@@ -61,6 +61,7 @@ function App() {
 
   // function to get the country data and to set the countryData state to the data fetched
   const getCountryData = (figures) => {
+    setCountryData([]);
     fetch(figures, {
       method: "GET",
       headers: {
@@ -119,6 +120,7 @@ function App() {
 
   // function to get the data for chart and to set the chartData state to the data fetched
   const getDataForChart = (api) => {
+    setChartData([]);
     fetch(api, {
       method: "GET",
       headers: {

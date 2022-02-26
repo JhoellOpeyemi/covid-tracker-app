@@ -89,3 +89,7 @@
 .container.light .news-time {
   color: rgba(0, 0, 0, 0.6);
 }
+
+.container.light .loader-svg path {
+  stroke: black;
+}
